@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+</head>
+<body>
+ <form id="formulario">
+ <h1>Formulario de Ingreso</h1>
+ <label for="nombre">Escribe tu nombre:</label>
+ <input type="text" id="nombre">
+ <br><label>Género:</label>
+ <input type="radio" name="genero" value="hombre"> Hombre
+ <input type="radio" name="genero" value="mujer"> Mujer 
+ <br>
+ <form id="formulario">
+    <label for="pais">País de nacimiento:</label>
+ <select id="pais">
+ <option value="arg">Argentina</option>
+ <option value="bra">Brasil</option>
+ <option value="usa">EE.UU.</option>
+ </select>
+ <button onclick="saludar()">Enviar</button>
+ </form> 
+ <script>
+    function saludar() {
+    let nombre = document.getElementById("nombre").value;
+    if (!nombre) {
+ alert('Escribe tu nombre.');
+ return;
+ } 
+   // Capturar y validar género
+ let radio = document.querySelector('input[name="genero"]:checked');
+ if (!radio) {
+ alert('Selecciona un género.');
+ return;
+ }
+// Capturar y validar género
+let radio = document.querySelector('input[name="genero"]:checked');
+ if (!radio) {
+ alert('Selecciona un género.');
+ return;
+ }
+// Determinar saludo
+ if (radio.value === 'hombre') {
+ saludo = 'Bienvenido';
+ } else {
+ saludo = 'Bienvenida';
+ }
+ alert(`${saludo}, ${nombre}`); 
+  }
+    </script> 
+   
+</body>
+</html>
