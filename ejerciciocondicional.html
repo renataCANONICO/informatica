@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Promedio de Notas</title>
+</head>
+<body>
+  <h2>Ejercicio 2: Ingresar tres notas y calcular el promedio</h2>
+
+  <label>Nota 1:</label>
+  <input type="number" id="nota1" min="0" max="10"><br><br>
+
+  <label>Nota 2:</label>
+  <input type="number" id="nota2" min="0" max="10"><br><br>
+
+  <label>Nota 3:</label>
+  <input type="number" id="nota3" min="0" max="10"><br><br>
+
+  <button onclick="calcularPromedio()">Calcular Promedio</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function calcularPromedio() {
+      // Obtener valores y convertirlos a número
+      const n1 = parseFloat(document.getElementById("nota1").value);
+      const n2 = parseFloat(document.getElementById("nota2").value);
+      const n3 = parseFloat(document.getElementById("nota3").value);
+
+      // Validar que las notas sean números válidos
+      if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+        document.getElementById("resultado").innerText = "Por favor, ingresá las tres notas correctamente.";
+        return;
+      }
+
+      // Calcular promedio
+      const promedio = (n1 + n2 + n3) / 3;
+      const promedioRedondeado = promedio.toFixed(2);
+
+      // Mostrar mensaje según resultado
+      if (promedio >= 6) {
+        document.getElementById("resultado").innerText = `Tu promedio es ${promedioRedondeado}. ¡Aprobaste!`;
+      } else {
+        document.getElementById("resultado").innerText = `Tu promedio es ${promedioRedondeado}. Necesitás repasar.`;
+      }
+    }
+  </script>
+</body>
+</html>

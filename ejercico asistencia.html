@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmación de Fiesta</title>
+</head>
+<body>
+  <h2>Confirmación de asistencia a la fiesta de fin de año</h2>
+
+  <form id="formulario">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" required><br><br>
+
+    <label>¿Asistirás a la fiesta?</label><br>
+    <input type="radio" id="si" name="asistencia" value="sí" required>
+    <label for="si">Sí</label><br>
+
+    <input type="radio" id="no" name="asistencia" value="no">
+    <label for="no">No</label><br><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <p id="mensaje"></p>
+
+  <script>
+    document.getElementById("formulario").addEventListener("submit", function(event) {
+      event.preventDefault(); // Evita que se recargue la página
+
+      const nombre = document.getElementById("nombre").value.trim();
+      const asistencia = document.querySelector('input[name="asistencia"]:checked');
+
+      if (nombre && asistencia) {
+        const respuesta = asistencia.value;
+
+        let mensaje = "";
+
+        if (respuesta === "sí") {
+          mensaje = `¡Gracias por confirmar, ${nombre}! Nos vemos en la fiesta.`;
+        } else {
+          mensaje = `¡Qué pena, ${nombre}! será la proxima.`;
+        }
+
+        document.getElementById("mensaje").textContent = mensaje;
+      }
+    });
+  </script>
+</body>
+</html>

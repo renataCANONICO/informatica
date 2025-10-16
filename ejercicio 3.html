@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Estudiante</title>
+</head>
+<body>
+  <h2>Ejercicio 3: Registro de Estudiante</h2>
+
+  <label>Nombre:</label>
+  <input type="text" id="nombre"><br><br>
+
+  <label>Apellido:</label>
+  <input type="text" id="apellido"><br><br>
+
+  <label>Curso:</label>
+  <input type="text" id="curso"><br><br>
+
+  <button onclick="registrar()">Registrar</button>
+
+  <script>
+    function registrar() {
+      const nombre = document.getElementById("nombre").value;
+      const apellido = document.getElementById("apellido").value;
+      const curso = document.getElementById("curso").value;
+
+      if (!nombre || !apellido || !curso) {
+        alert("Por favor, completá todos los campos.");
+        return;
+      }
+
+      // Guardar en localStorage
+      localStorage.setItem("nombre", nombre);
+      localStorage.setItem("apellido", apellido);
+      localStorage.setItem("curso", curso);
+
+      // Redirigir a la otra página
+      window.location.href = "bienvenida.html";
+    }
+  </script>
+</body>
+</html>
