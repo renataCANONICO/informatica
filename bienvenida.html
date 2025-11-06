@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Bienvenida</title>
+</head>
+<body>
+  <h1 id="saludo"></h1>
+
+  <script>
+    // Obtener los datos del localStorage
+    const nombre = localStorage.getItem("nombre");
+    const apellido = localStorage.getItem("apellido");
+    const curso = localStorage.getItem("curso");
+
+    // Mostrar el mensaje de bienvenida o un mensaje alternativo
+    const saludo = document.getElementById("saludo");
+
+    if (nombre && apellido && curso) {
+      saludo.textContent = `¡Bienvenido/a ${nombre} ${apellido} del curso ${curso}! `;
+    } else {
+      saludo.textContent = "No se ingresaron datos. Volvé al formulario.";
+    }
+  </script>
+</body>
+</html>
+

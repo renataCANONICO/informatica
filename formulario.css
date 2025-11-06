@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    background: linear-gradient(135deg, #e774eb, #ceace5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +13,7 @@ body {
     margin-bottom: 20px;
     }
     form {
-    background: #Ưf;
+    background: #ffffff;
     padding: 25px 30px;
     border-radius: 12px;
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
@@ -35,8 +35,8 @@ body {
     transition: 0.3s;
     }
     input[type="text"]:focus, select:focus {
-    border-color: #4facfe;
-    box-shadow: 0px 0px 6px rgba(79, 172, 254, 0.6);
+    border-color: #fe4fd8;
+    box-shadow: 0px 0px 6px rgba(213, 79, 254, 0.6);
     }
     .radio-group {
     margin: 8px 0 15px;
@@ -47,18 +47,18 @@ body {
     button {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, #43e97b, #38f9d7);
+    background: linear-gradient(135deg, #e943e9, #470844);
     border: none;
     border-radius: 8px;
-    color: #Ưf;
+    color: #fff;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.2s ease, background 0.3s ease;
+    transition: transform 0.2s ease, 0.3s ease;
     margin-top: 15px;
     }
     button:hover {
     transform: scale(1.05);
-    background: linear-gradient(135deg, #38f9d7, #43e97b);
+    background: linear-gradient(135deg, #f938a9, #ac43e9);
     } 
    

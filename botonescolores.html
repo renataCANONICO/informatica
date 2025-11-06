@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cambiar colores</title>
+  <!-- Enlace al archivo CSS -->
+  <link rel="stylesheet" href="colores.css">
+</head>
+<body>
+
+  <h1>Haz clic para cambiar los colores</h1>
+
+  <button onclick="cambiarColor('#FFCCCC', '#000000')"> Rosa Claro</button>
+  <button onclick="cambiarColor('#3333FF', '#FFFFFF')"> Azul Oscuro</button>
+  <button onclick="cambiarColor('#FFFF99', '#333333')"> Amarillo Claro</button>
+
+  <script>
+    function cambiarColor(fondo, texto) {
+      document.body.style.backgroundColor = fondo;
+      document.body.style.color = texto;
+    }
+  </script>
+
+</body>
+</html>
