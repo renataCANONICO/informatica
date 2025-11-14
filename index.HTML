@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicios de JavaScript</title>
+  <link rel="stylesheet" href="formulario.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>¡Bienvenidos!</h1>
+    <p> Soy Renata de 3°H</p>
+    <p>Me gustaría seguir aprendiendo a crear paginas wep</p>
+    <img src="./moraaa.jpg">
+  </header>
+
+  <main>
+    <section>
+      <h2>Repositorio de Informática</h2>
+      <h3>Ejercicios DOM</h3>
+      <ul>
+        <li><a href="./receta.html">Receta</a></li>
+        <li><a href="./tabla.html">Tabla</a></li>
+        <li><a href="./semantica.html.html">Mafalda</a></li>
+  
+      </ul>
+      <script>
+/* ABRIR Y CERRAR EL MODAL */
+const modal = document.getElementById("modalTrivia");
+const btnAbrir = document.getElementById("abrirTrivia");
+const btnCerrar = document.querySelector(".cerrar");
+
+btnAbrir.onclick = () => { modal.style.display = "block"; };
+btnCerrar.onclick = () => { modal.style.display = "none"; };
+window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+
+/* CORREGIR TRIVIA */
+document.getElementById("formTrivia").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let puntaje = 0;
+  let salida = "";
+
+  // Respuestas correctas
+  const correctas = {
+    p1: "Xamirás, Galicia",
+    p2: "Hijas de la Divina Pastora",
+    p3: "Fitoterapia",
+    p4: "Amor al niño y al joven",
+    p5: "Dios siempre obra"
+  };
+
+  // Verificar cada pregunta
+  for (let p in correctas) {
+    let seleccion = document.querySelector(`input[name="${p}"]:checked`);
+
+    if (!seleccion) {
+      salida += `<p class='incorrecta'>${p}. No respondida. Correcta: ${correctas[p]}</p>`;
+      continue;
+    }
+
+    if (seleccion.value === correctas[p]) {
+      puntaje++;
+      salida += `<p class='correcta'>${p}. ✔ Correcta</p>`;
+    } else {
+      salida += `<p class='incorrecta'>${p}. ❌ Incorrecta. Correcta: ${correctas[p]}</p>`;
+    }
+  }
+
+  // Retroalimentación
+  let mensaje = "";
+  if (puntaje === 5) mensaje = "¡Excelente! ¡Conocés muy bien a Faustino Míguez!";
+  else if (puntaje >= 3) mensaje = "¡Muy bien! Podés repasar un poquito más.";
+  else mensaje = "Vamos, ¡vos podés! Te invito a volver a intentarlo.";
+
+  salida += `<h3>Puntaje final: ${puntaje} de 5</h3>`;
+  salida += `<p>${mensaje}</p>`;
+
+  document.getElementById("resultado").innerHTML = salida;
+});
+</script>
+
+    </section>
+
+    <section>
+      <h3>Ejercicios de Interacción con el Usuario</h3>
+      <ul>
+        <li><a href="./contador.html" > Ejercicio 1- Contador</a></li>
+        <li><a href="./botonescolores.html" > Ejercicio 2- Colores</a></li>
+         <li><a href="./verificaredad.html" > Ejercicio 3- Verificar Edad</a></li>
+        <li><a href="juego.html">Ejercicio 4- Juego de adivinanza </a></li>
+     <li><a href="promedio.html">Ejercicio 5 - promedio</a></li>
+     <li><a href="./asistencia.html"> Ejercicio 6-Asistencia</a></li>
+     <li><a href="./formpromedio.html"> Ejercicio 7- Promedio</a></li>
+     <li><a href="./formbienvenida.html">Ejercicio 8-Formulario de bienvenida</a></li>
+     <li><a href="./formfecha.html">Ejercicio 9- Formulario de fechas</a></li>
+     <li><a href="./formimc.html"> Ejercicio 10- Formulario IMC</a></li>
+     </ul>
+      </ul>
+    </section>
+  </main>
+
+</body>
+</html>
